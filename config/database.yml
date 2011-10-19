@@ -1,0 +1,23 @@
+defaults: &defaults
+  adapter: mysql2
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *defaults
+  database: db/words.sqlite3
+  adapter: sqlite3
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *defaults
+  database: companies_house_test
+
+production:
+  <<: *defaults
+  database: companies_house_production
