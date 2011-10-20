@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
 
-  expose(:flagged_words) { Word.flagged }
-  expose(:words) { Word.to_consider.page(params[:page]).per(100) }
+  expose(:flagged_words) { Word.flagged.order("computer") }
+  expose(:words) { Word.to_consider.order("computer").page(params[:page]).per(100) }
   expose(:word) { Word.find(params[:id])}
   
   def index
