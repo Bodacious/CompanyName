@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019164153) do
+ActiveRecord::Schema.define(:version => 20111020174548) do
 
   create_table "companies", :force => true do |t|
     t.string  "name",                :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20111019164153) do
     t.string  "computer"
     t.boolean "shortlist"
     t.boolean "domain_available"
+    t.boolean "flag_for_purchase"
   end
 
   add_index "words", ["computer"], :name => "index_words_on_computer"

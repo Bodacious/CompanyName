@@ -1,0 +1,3 @@
+var wordRow = $("#word_<%= word.id %>").clone();
+$("#flagged_words #word_<%= word.id %>").remove();
+$("#words").append("<%= escape_javascript(render(word)) %>");

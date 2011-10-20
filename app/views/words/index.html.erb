@@ -5,14 +5,15 @@
   are available at the moment. If you don't like a name, click <b>remove</b>.
 </p>
 
-<table>
-  <% words.each do |word| %>
-    <tr id="word_<%= word.id %>">
-      <td><%= word.human.titleize %></td>
-      <td><%= word.domain %></td>
-      <td><%= link_to 'remove', word, method: :delete, remote: true %></td>
-    </tr>
-  <% end %>
+<table id="flagged_words">
+
+  <%= render flagged_words %>
+</table>
+
+<hr>
+
+<table id="words">
+  <%= render words %>
 </table>
 
 <%= paginate(words) %>

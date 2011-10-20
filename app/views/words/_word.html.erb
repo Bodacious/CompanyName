@@ -1,0 +1,12 @@
+<tr id="word_<%= word.id %>">
+  <td><%= word.human.titleize %></td>
+  <td><%= word.domain %></td>
+  <td>
+    <% if word.flag_for_purchase %>
+      <%= link_to 'unflag', unflag_word_path(word), remote: true, method: :put %>    
+    <% else %>
+      <%= link_to 'flag', flag_word_path(word), remote: true, method: :put %>
+    <% end %>
+  </td>      
+  <td><%= link_to 'remove', word, method: :delete, remote: true %></td>
+</tr>
