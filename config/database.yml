@@ -20,4 +20,9 @@ test:
 
 production:
   <<: *defaults
-  database: companies_house_production
+  database: db/words.sqlite3
+  adapter: sqlite3
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
