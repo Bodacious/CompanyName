@@ -85,4 +85,4 @@ end
 
 before "deploy:restart", "bundle:install", "assets:precompile"
 # after "deploy:restart", "deploy:cleanup", "thinking_sphinx:rebuild", "whenever:update_crontab"
-after "deploy:restart", "deploy:cleanup", "whenever:update_crontab"
+after "deploy:restart", "deploy:cleanup"
