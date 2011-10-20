@@ -17,7 +17,7 @@ set :run_method, :run
 # Git settings
 set :scm, "git"
 set :scm_user, "gavinM"
-set :branch, lambda {rails_env}
+set :branch, "master"
 
 # RVM Settings
 set :rvm_ruby_string, "ruby-1.9.2-p180@#{application}"
