@@ -3,7 +3,7 @@ namespace :domains do
   task :check_all => :environment do
     Word.domain_unchecked.order('computer').find_each do |word|
       puts word.human
-      available             = begin Whois.whois("#{word.computer}.com").available? rescue next end
+      available             = begin Whois.whois("#{word.computer}.com").available? rescue false end
       word.domain_available = available
       word.shortlist        = available
       word.save
