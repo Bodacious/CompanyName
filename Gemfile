@@ -4,11 +4,13 @@ gem 'rails', '3.1.1'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
+gem "kaminari"
 gem 'mysql2'
 gem "sqlite3"
 gem "whois"
 gem "decent_exposure"
+gem "capistrano"
+gem "capistrano-ext"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   
-  expose(:words) { Word.domain_available }
+  expose(:words) { Word.to_consider.page(params[:page]).per(100) }
   expose(:word)
   
   def index

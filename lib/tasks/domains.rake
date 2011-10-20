@@ -1,11 +1,12 @@
 namespace :domains do
   desc "Check all"
   task :check_all => :environment do
-    Word.domain_unchecked.find_each do |word|
-      available             = Whois.whois("#{word.computer}.com").available?
-      word.domain_available = true
-      word.shortlist        = true
-      word.save if available
+    Word.domain_unchecked.order('computer').find_each do |word|
+      puts word.human
+      available             = begin Whois.whois("#{word.computer}.com").available? rescue next end
+      word.domain_available = available
+      word.shortlist        = available
+      word.save
     end
   end
 end
